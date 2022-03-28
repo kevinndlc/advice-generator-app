@@ -1,0 +1,16 @@
+{
+  "name": "advice-generator-app-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Advice generator app coding challenge](./design/desktop-preview.jpg)",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "Kevin Ndlc",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.4.0"
+  }
+}
