@@ -2,7 +2,7 @@
   "name": "advice-generator-app-main",
   "version": "1.0.0",
   "description": "![Design preview for the Advice generator app coding challenge](./design/desktop-preview.jpg)",
-  "source": "index.html",
+  "source": "./src/index.html",
   "scripts": {
     "start": "parcel",
     "build": "parcel build"
@@ -11,6 +11,7 @@
   "author": "Kevin Ndlc",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-sass": "2.4.0",
     "parcel": "^2.4.0"
   }
 }

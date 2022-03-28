@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+// VARIABLES
+$light-cyan: hsl(193, 38%, 86%);
+$neon-green: hsl(150, 100%, 66%);
+$grayish-blue: hsl(217, 19%, 38%);
+$dark-grayish-blue: hsl(217, 19%, 24%);
+$dark-blue: hsl(218, 23%, 16%);
+
+$font-stack: 'Manrope', sans-serif;
+
+// MEDIA QUERIES
+@mixin md {
+  @media screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+// RESET
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// BASE
+:root {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid: 
+    "main" 1fr
+    "footer" auto /
+    auto;
+  background: $dark-blue;
+  font-family: $font-stack;
+  font-weight: 800;
+  color: $light-cyan;
+  line-height: 1.5;
+  padding-inline: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+// UTILITIES
+.card {
+  background: $dark-grayish-blue;
+  padding: 4rem 2.4rem 6.4rem;
+  border-radius: 10px;
+  max-width: 540px;
+  margin: auto;
+  margin-top: 120px;
+
+  @include md {
+    border-radius: 15px;
+    padding: 4.8rem;
+    padding-bottom: 7.2rem;
+    margin-top: 223px;
+  }
+}
+
+// SPECIFIC
+
+main {
+  text-align: center;
+
+  .card {
+    position: relative;
+  }
+
+  h1 {
+    color: $neon-green;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 3.46px;
+    margin-bottom: 2.4rem;
+
+    @include md {
+      font-size: 1.3rem;
+    }
+  }
+
+  q {
+    display: block;
+    font-size: 2.4rem;
+    margin-bottom: 2.4rem;
+    letter-spacing: -0.3px;
+
+    &::before {
+      content: "“"
+    }
+
+    &::after {
+      content: "”"
+    }
+
+    @include md {
+      margin-bottom: 4rem;
+      font-size: 2.8rem;
+    }
+  }
+
+  .separator {
+    height: 16px;
+    position: relative;
+    
+    .sep {
+      background: $grayish-blue;
+      height: 1px;
+      position: absolute;
+      top: 50%;
+      width: 100%
+    }
+
+    .lines {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 52px;
+      padding: 0 16px;
+      height: 100%;
+      background: $dark-grayish-blue;
+      display: flex;
+      justify-content: space-between;
+
+      .line {
+        width: 6px;
+        height: 100%;
+        background: $light-cyan;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  button {
+    padding: 2rem;
+    background: $neon-green;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    cursor: pointer;
+    transition: 0.4s linear;
+
+    &:hover {
+      box-shadow: 0px 0px 40px $neon-green;
+    }
+
+    img {
+      width: 24px;
+      aspect-ratio: 1/1;
+    }
+  }
+}
+
+footer {
+  font-size: 1.2rem;
+  text-align: center;
+  padding-block: 1.6rem;
+
+  @include md {
+    font-size: 1.6rem;
+  }
+
+  a {
+    color: $neon-green;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
